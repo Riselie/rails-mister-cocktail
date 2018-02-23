@@ -6,7 +6,10 @@ git_source(:github) do |repo_name|
 end
 
 ruby '2.4.3'
+gem 'carrierwave', '~> 1.2'
+gem 'jquery-rails'
 gem 'figaro'
+gem 'cloudinary'
 gem 'sprockets-rails'
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass' # Bootstrap v3
