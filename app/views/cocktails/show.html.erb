@@ -1,8 +1,12 @@
 
 <div class="container">
   <h1><%= @cocktail.name %></h1>
-  <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
-  <%= image_tag @cocktail.photo.url(:thumnail) %>
+  <% if @cocktail.photo.present? %>
+    <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+  <% else %>
+    <%= cl_image_tag("cocktail_main",
+      width: 400, height: 300, crop: :fill) %>
+  <% end  %>
 
     <table>
       <thead>
