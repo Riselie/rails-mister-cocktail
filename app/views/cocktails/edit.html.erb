@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Edit a Cocktail</h1>
+
+  <%= render 'form', cocktail: @cocktail %>
+
+  <div class="bottom-links">
+  <%= link_to 'Show', @cocktail %>
+  </div>
+  <div class="bottom-links">
+  <%= link_to 'Back', cocktails_path %>
+  </div>
+</div>

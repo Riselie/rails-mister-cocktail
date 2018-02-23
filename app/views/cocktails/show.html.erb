@@ -2,23 +2,34 @@
 <div class="container">
   <h1><%= @cocktail.name %></h1>
 
-  <div>
+
     <table>
       <thead>
         <tr>
-          <th>Ingredient</th>
           <th>Dose</th>
+          <th>Ingredient</th>
         </tr>
       </thead>
-
       <tbody>
         <% @cocktail.doses.each do |dose| %>
-          <tr> <%= dose.ingredient.name %> <%= dose.description %> | <%= link_to 'Destroy', dose_path(id: dose), method: :delete, data: { confirm: 'Are you sure?' } %></tr>
+          <tr>
+            <td> <%= dose.description %>
+            </td>
+            <td>
+              <%= dose.ingredient.name %>
+            </td>
+            <td>
+              <%= link_to 'Delete', dose_path(id: dose), method: :delete, data: { confirm: 'Are you sure?' } %>
+            </td>
+          </tr>
         <% end %>
       </tbody>
     </table>
-  </div>
 
-  <%= link_to 'Add a new dose', new_cocktail_dose_path(@cocktail) %>
-  <%= link_to 'Back', cocktails_path %>
+  <div class="bottom-links">
+    <%= link_to '- Add a new dose', new_cocktail_dose_path(@cocktail) %>
+  </div>
+  <div class="bottom-links">
+    <%= link_to 'Back', cocktails_path %>
+  </div>
 </div>
