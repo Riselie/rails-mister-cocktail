@@ -23,5 +23,5 @@ Ingredient.create(name: "Cream")
 Ingredient.create(name: "Coffee liqueur")
 Ingredient.create(name: "Absinthe")
 
-Ingredient.create!(ingredients_attributes)
+Ingredient.create!()
 puts 'Finished!'
